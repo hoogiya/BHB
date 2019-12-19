@@ -30,8 +30,7 @@
               "src/styles.less",
               "src/assets/css/bootstrap.min.css",
               "node_modules/font-awesome/css/font-awesome.css",
-              "src/assets/fonts/fonts.css",
-              "./node_modules/ngx-lightbox/lightbox.css"
+              "src/assets/fonts/fonts.css"
             ],
             "scripts": [],
             "es5BrowserSupport": true
