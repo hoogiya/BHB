@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="col-md-5 col-sm-8 col-xs-12 offset-3 login-form">
+        <p class="text-center">
+            <a href="/"><img src="../../assets/img/logo-186x86.png"/></a>
+        </p>
+        <h4 class="text-center text-uppercase">Login</h4>
+        <form [formGroup]="edayContactForm" (ngSubmit)="onSubmit()">
+            <div class="form-group"> 
+                <label>Email</label>
+                <input type="text" formControlName="email" autocomplete="off" class="form-control" [ngClass]="{ 'is-invalid': (submitted && f.email.errors) }" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"/>
+                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                    <div *ngIf="f.email.errors.required">Email is required</div>
+                    <div *ngIf="f.email.errors.pattern">Email must be a valid email address</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" formControlName="pwd" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.pwd.errors }" />
+                <div *ngIf="submitted && f.pwd.errors" class="invalid-feedback">
+                    <div *ngIf="f.pwd.errors.required">Password is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+        <p><b>Note:</b> Enter valid email id and any password</p>
+        <!-- <p>Form value: {{ edayContactForm.value | json }}</p>
+        <p>Form status: {{ edayContactForm.status | json }}</p> -->
+    </div>    
+</div>
